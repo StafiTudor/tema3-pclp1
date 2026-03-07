@@ -1,0 +1,11 @@
+# Ia fiecare poza din folder
+for poza in *.ppm; do
+    echo "LOAD $poza" > comenzi.txt
+    echo "APPLY BLUR" >> comenzi.txt
+    echo "APPLY SHARPEN" >> comenzi.txt
+    echo "SAVE $poza ascii" >> comenzi.txt
+    echo "EXIT" >> comenzi.txt
+    
+    # Rulez programul in C si ii dau sa citeasca din file ul cu comenzi
+    ./editorul_tau < comenzi.txt
+done
